@@ -9,6 +9,11 @@ Anemone.crawl("http://news.yahoo.co.jp/", :depth_limit => 0) do |anemone|
 			# puts title.text
 		# end
 
-		puts page.doc
+		# puts page.doc
+		page.doc.xpath("/html/body/div/div[2]/div[2]/div[1]/div[1]/ul[1]/li[1]/div/h1/a").each do |title|
+		# page.doc.xpath("/html/body/div/div[2]/div[2]/div[1]/div[2]/div[2]/ul/").each do |title|
+		# page.doc.xpath("/html/body/div/div[2]/div[2]/div[1]/div[2]/div[2]/ul/li[3]/div[2]/dl/dt/a").each do |title|
+			puts title.text
+		end
 	end
 end
